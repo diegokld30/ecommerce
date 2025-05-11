@@ -21,12 +21,17 @@ export class CreateProductDto {
     @IsInt()
     @IsPositive()
     @IsOptional()
-    stock?: number;
+    stock?: number; 
 
-    @IsString({each: true})
+    @IsString({ each: true })
     @IsArray()
-    sizes: string[];
+    sizes: string[]
 
-    @IsIn(['men', 'women', 'kid', 'unisex'])
+    @IsIn(['men','women','kid','unisex'])
     gender: string;
+
+    @IsString({ each: true })
+    @IsArray()
+    @IsOptional()
+    tags: string[];
 }
